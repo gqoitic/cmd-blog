@@ -1,9 +1,14 @@
 package com.gqoitic.cmd_blog.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class User {
     private String login;
     private String password;
     private String name;
+
+    public static List<User> listOfUsers = new ArrayList<>();
 
     public User( String login,
                  String password,
@@ -12,6 +17,8 @@ public class User {
         this.login = login;
         this.password = password;
         this.name = name;
+
+        listOfUsers.add(this);
     }
 
     public String getLogin() {
