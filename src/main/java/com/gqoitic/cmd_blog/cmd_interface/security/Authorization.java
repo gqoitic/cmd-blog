@@ -27,11 +27,12 @@ public class Authorization {
                     currentUser = user;
                     System.out.println("Authorization successful");
                     return true;
-                } else {
-                    System.out.println("\n      =Incorrect login or password=\n");
-                    return false;
                 }
             }
+
+            System.out.println("\n      =Incorrect login or password=\n");
+            return false;
+
         } else {
             System.out.println("There is no such user");
         }
