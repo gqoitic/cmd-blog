@@ -1,18 +1,17 @@
-package com.gqoitic.cmd_blog.cmd_interface;
+package com.gqoitic.cmd_blog.cmd_interface.security;
 
+import com.gqoitic.cmd_blog.cmd_interface.Indentions;
 import com.gqoitic.cmd_blog.model.User;
 
 import java.util.Scanner;
 
 public class Authorization {
 
-    static User currentUser;
+    public static User currentUser;
 
     static Scanner scanner = new Scanner(System.in);
 
     public static boolean login(){
-
-        User test = new User("admin", "psw", "ADMIN");
 
         Indentions.indention();
 

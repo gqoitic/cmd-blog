@@ -21,6 +21,10 @@ public class User {
         listOfUsers.add(this);
     }
 
+    static {
+        User admin = new User("admin", "psw", "ADMIN");
+    }
+
     public String getLogin() {
         return login;
     }
@@ -39,5 +43,14 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "login='" + login + '\'' +
+                ", password='" + password + '\'' +
+                ", name='" + name + '\'' +
+                '}';
     }
 }

@@ -1,5 +1,6 @@
 package com.gqoitic.cmd_blog.cmd_interface;
 
+import com.gqoitic.cmd_blog.cmd_interface.security.Authorization;
 import com.gqoitic.cmd_blog.model.User;
 
 import java.util.Objects;
@@ -9,10 +10,10 @@ public class Indentions {
     static void userPanel(){
         indention();
 
-        System.out.println    ("[login]                        [exit]");
+        System.out.println    ("[login] [registration]         [exit]");
     }
 
-    static void indention(){
+    public static void indention(){
         for(int i = 5; i >= 0; i--)
             System.out.println("-                                   -");
     }
