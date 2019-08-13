@@ -3,6 +3,7 @@ package com.gqoitic.cmd_blog.cmd_interface.security;
 import com.gqoitic.cmd_blog.cmd_interface.Indentions;
 import com.gqoitic.cmd_blog.model.User;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Authorization {
@@ -39,5 +40,23 @@ public class Authorization {
 
         Indentions.indention();
         return false;
+    }
+
+    public static boolean signOut(){
+
+        Indentions.indention();
+
+        if(!Objects.isNull(currentUser)) {
+            currentUser = null;
+            System.out.println("\n      =You signed out of your account=");
+
+            Indentions.indention();
+            return true;
+        } else {
+            System.out.println("\n      =You are not logged in=");
+
+            Indentions.indention();
+            return false;
+        }
     }
 }

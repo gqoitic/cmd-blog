@@ -25,6 +25,8 @@ public class Interf_controller {
                 session = false;
             } else if(userInput.toUpperCase().equals(Commands.REGISTRATION.getCommand())){
                 Registration.registration();
+            } else if(userInput.toUpperCase().equals(Commands.SIGNOUT.getCommand())){
+                Authorization.signOut();
             }
         }
     }
