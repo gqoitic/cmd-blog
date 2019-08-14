@@ -4,7 +4,9 @@ public enum Commands {
     EXIT("EXIT"),
     LOGIN("LOGIN"),
     REGISTRATION("REGISTRATION"),
-    SIGNOUT("SIGNOUT");
+    SIGNOUT("SIGNOUT"),
+    CLEAR("CLEAR");
+
 
     private String command;
 

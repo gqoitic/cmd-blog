@@ -27,6 +27,10 @@ public class Interf_controller {
                 Registration.registration();
             } else if(userInput.toUpperCase().equals(Commands.SIGNOUT.getCommand())){
                 Authorization.signOut();
+            } else if(userInput.toUpperCase().equals(Commands.CLEAR.getCommand())){
+                Indentions.clear();
+            } else {
+                System.out.printf("%n=            Unknown command \'%s\'   %n%n", userInput);
             }
         }
     }
