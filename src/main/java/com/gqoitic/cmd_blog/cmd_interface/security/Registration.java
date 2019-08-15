@@ -22,12 +22,21 @@ public class Registration {
         System.out.print("Create name: ");
         String name = scanner.nextLine();
 
+        if( login.replaceAll("\\s+","").length() < 1        ||
+            password.replaceAll("\\s+","").length() < 1     ||
+            name.replaceAll("\\s+","").length() < 1
+          ) {
+                System.out.print("\n\n\tFields cannot be empty!\n");
+                return false;
+            }
+
         for(User user : User.listOfUsers){
             if(user.getLogin().equals(login) || user.getName().equals(name)){
                 System.out.print("\n\n\tUser with the same login or name already exist!\n");
                 return false;
             }
         }
+
         User user = new User(login, password, name);
 
         Indentions.indention();
