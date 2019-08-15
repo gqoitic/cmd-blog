@@ -5,7 +5,8 @@ public enum Commands {
     LOGIN("LOGIN"),
     REGISTRATION("REGISTRATION"),
     SIGNOUT("SIGNOUT"),
-    CLEAR("CLEAR");
+    CLEAR("CLEAR"),
+    HELP("HELP");
 
 
     private String command;
@@ -16,5 +17,9 @@ public enum Commands {
 
     public String getCommand(){
         return command;
+    }
+
+    public static void help(){
+        System.out.print("\n\n\t[exit] [login] [registration] [signout] [clear]\n\n");
     }
 }

@@ -10,12 +10,12 @@ public class Indentions {
     static void userPanel(){
         indention();
 
-        System.out.println    ("[login] [registration] [signout] [clear] [exit]");
+        System.out.println    ("[help] [login] [registration] [signout] [clear] [exit]");
     }
 
     public static void indention(){
         for(int i = 5; i >= 0; i--)
-            System.out.println("-                                             -");
+            System.out.println("-                                                    -");
     }
 
     static void pointer(){
@@ -30,6 +30,6 @@ public class Indentions {
 
     static void clear(){
         for(int i = 40; i >= 0; i--)
-            System.out.println("-                                             -");
+            System.out.println("-                                                    -");
     }
 }

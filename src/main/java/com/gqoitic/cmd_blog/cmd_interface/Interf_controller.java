@@ -29,7 +29,10 @@ public class Interf_controller {
                 Authorization.signOut();
             } else if(userInput.toUpperCase().equals(Commands.CLEAR.getCommand())){
                 Indentions.clear();
-            } else {
+            } else if(userInput.toUpperCase().equals(Commands.HELP.getCommand())){
+                Commands.help();
+            } else if(userInput.replaceAll("\\s+","").length() < 1) {}
+              else {
                 System.out.printf("%n=            Unknown command \'%s\'   %n%n", userInput);
             }
         }
