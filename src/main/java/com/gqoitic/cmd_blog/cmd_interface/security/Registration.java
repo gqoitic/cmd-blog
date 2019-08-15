@@ -22,6 +22,12 @@ public class Registration {
         System.out.print("Create name: ");
         String name = scanner.nextLine();
 
+        for(User user : User.listOfUsers){
+            if(user.getLogin().equals(login) || user.getName().equals(name)){
+                System.out.print("\n\n\tUser with the same login or name already exist!\n");
+                return false;
+            }
+        }
         User user = new User(login, password, name);
 
         Indentions.indention();
