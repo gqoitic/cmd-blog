@@ -1,5 +1,7 @@
 package com.gqoitic.cmd_blog.cmd_interface;
 
+import com.gqoitic.cmd_blog.cmd_interface.commands.CommonCommands;
+import com.gqoitic.cmd_blog.cmd_interface.commands.UserCommandsList;
 import com.gqoitic.cmd_blog.cmd_interface.security.Authorization;
 import com.gqoitic.cmd_blog.cmd_interface.security.Registration;
 
@@ -19,20 +21,23 @@ public class Interf_controller {
             Indentions.pointer();
             String userInput = scanner.nextLine();
 
-            if(userInput.toUpperCase().equals(Commands.LOGIN.getCommand())){
+            if(userInput.toUpperCase().equals(CommonCommands.LOGIN.getCommand())){
                 Authorization.login();
-            } else if(userInput.toUpperCase().equals(Commands.EXIT.getCommand())){
+            } else if(userInput.toUpperCase().equals(CommonCommands.EXIT.getCommand())){
                 session = false;
-            } else if(userInput.toUpperCase().equals(Commands.REGISTRATION.getCommand())){
+            } else if(userInput.toUpperCase().equals(CommonCommands.REGISTRATION.getCommand())){
                 Registration.registration();
-            } else if(userInput.toUpperCase().equals(Commands.SIGNOUT.getCommand())){
+            } else if(userInput.toUpperCase().equals(UserCommandsList.SIGNOUT.getCommand())){
                 Authorization.signOut();
-            } else if(userInput.toUpperCase().equals(Commands.CLEAR.getCommand())){
+            } else if(userInput.toUpperCase().equals(CommonCommands.CLEAR.getCommand())){
                 Indentions.clear();
-            } else if(userInput.toUpperCase().equals(Commands.HELP.getCommand())){
-                Commands.help();
+            } else if(userInput.toUpperCase().equals(CommonCommands.HELP.getCommand())){
+                CommonCommands.help();
             } else if(userInput.replaceAll("\\s+","").length() < 1) {}
-              else {
+              else if(userInput.toUpperCase().equals(UserCommandsList.CHANGENAME.getCommand())){
+                UserCommandsList.changeName();
+            }
+             else {
                 System.out.printf("%n=            Unknown command \'%s\'   %n%n", userInput);
             }
         }

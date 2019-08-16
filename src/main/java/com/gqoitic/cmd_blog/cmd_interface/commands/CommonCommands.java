@@ -1,21 +1,20 @@
-package com.gqoitic.cmd_blog.cmd_interface;
+package com.gqoitic.cmd_blog.cmd_interface.commands;
 
 import com.gqoitic.cmd_blog.cmd_interface.security.Authorization;
 
 import java.util.Objects;
 
-public enum Commands {
+public enum CommonCommands {
     EXIT("EXIT"),
     LOGIN("LOGIN"),
     REGISTRATION("REGISTRATION"),
-    SIGNOUT("SIGNOUT"),
     CLEAR("CLEAR"),
     HELP("HELP");
 
 
     private String command;
 
-    Commands(String command){
+    CommonCommands(String command){
         this.command = command;
     }
 
@@ -25,7 +24,7 @@ public enum Commands {
 
     public static void help(){
         if(!Objects.isNull(Authorization.currentUser))
-            System.out.print("\n\n\t[exit] [login] [registration] [signout] [clear]\n\n");
+            System.out.print("\n\n\t[exit] [login] [registration] [signout] [changeName] [clear]\n\n");
         else
             System.out.print("\n\n\t[exit] [login] [signout] [clear]\n\n");
     }
