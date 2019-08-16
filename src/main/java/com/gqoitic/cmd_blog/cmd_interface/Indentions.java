@@ -10,7 +10,7 @@ public class Indentions {
     static void userPanel(){
         indention();
 
-        System.out.println    ("[help] [login] [registration] [signout] [clear] [exit]");
+        System.out.println    ("[help] [login] [registration]           [clear] [exit]");
     }
 
     public static void indention(){
