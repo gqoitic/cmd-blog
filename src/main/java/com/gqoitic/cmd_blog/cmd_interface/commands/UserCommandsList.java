@@ -26,4 +26,12 @@ public enum UserCommandsList {
             System.out.print("\n\t=You are not logged in=\n");
         }
     }
+
+    public static void changePassword(){
+        if(!Objects.isNull(Authorization.currentUser)){
+            UserCommands.changePassword();
+        } else {
+            System.out.print("\n\t=You are not logged in=\n");
+        }
+    }
 }

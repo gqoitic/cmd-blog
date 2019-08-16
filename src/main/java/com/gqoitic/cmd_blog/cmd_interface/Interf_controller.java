@@ -34,8 +34,11 @@ public class Interf_controller {
             } else if(userInput.toUpperCase().equals(CommonCommands.HELP.getCommand())){
                 CommonCommands.help();
             } else if(userInput.replaceAll("\\s+","").length() < 1) {}
+
               else if(userInput.toUpperCase().equals(UserCommandsList.CHANGENAME.getCommand())){
                 UserCommandsList.changeName();
+            } else if(userInput.toUpperCase().equals(UserCommandsList.CHANGEPASSWORD.getCommand())){
+                UserCommandsList.changePassword();
             }
              else {
                 System.out.printf("%n=            Unknown command \'%s\'   %n%n", userInput);

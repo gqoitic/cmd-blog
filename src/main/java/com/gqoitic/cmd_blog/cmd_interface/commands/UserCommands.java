@@ -18,4 +18,14 @@ public class UserCommands {
         Authorization.currentUser.setName(newName);
         Indentions.indention();
     }
+
+    public static void changePassword(){
+        Indentions.indention();
+
+        System.out.print("\nEnter new password: ");
+        String newPassword = scanner.nextLine();
+
+        Authorization.currentUser.setPassword(newPassword);
+        Indentions.indention();
+    }
 }
