@@ -3,6 +3,7 @@ package com.gqoitic.cmd_blog.cmd_interface.security;
 import com.gqoitic.cmd_blog.cmd_interface.Indentions;
 import com.gqoitic.cmd_blog.model.User;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Registration {
@@ -12,6 +13,11 @@ public class Registration {
     public static boolean registration(){
 
         Indentions.indention();
+
+        if(!Objects.isNull(Authorization.currentUser)){
+            System.out.print("\n\n\t\t=You are logged in=\n\n");
+            return false;
+        }
 
         System.out.print("Create login: ");
         String login = scanner.nextLine();

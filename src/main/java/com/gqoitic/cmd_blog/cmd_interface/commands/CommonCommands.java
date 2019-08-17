@@ -24,9 +24,9 @@ public enum CommonCommands {
 
     public static void help(){
         if(!Objects.isNull(Authorization.currentUser))
-            System.out.print("\n\n\t[exit] [login] [registration] [signout] [changeName] [clear]\n" +
+            System.out.print("\n\n\t[exit] [login] [signout] [changeName] [clear]\n" +
                              "\t[changePassword]\n\n");
         else
-            System.out.print("\n\n\t[exit] [login] [signout] [clear]\n\n");
+            System.out.print("\n\n\t[exit] [login] [registration] [clear]\n\n");
     }
 }
