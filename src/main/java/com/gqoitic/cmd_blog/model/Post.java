@@ -2,13 +2,20 @@ package com.gqoitic.cmd_blog.model;
 
 import com.gqoitic.cmd_blog.cmd_interface.security.Authorization;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Post {
-    private String title, text, userLogin;
+    private String title, text, userName;
+
+    public static List<Post> listOfPosts = new ArrayList<>();
 
     public Post(String title, String text){
         this.title = title;
         this.text = text;
-        this.userLogin = Authorization.currentUser.getLogin();
+        this.userName = Authorization.currentUser.getName();
+
+        listOfPosts.add(this);
     }
 
     public String getTitle(){
@@ -27,7 +34,16 @@ public class Post {
         this.text = text;
     }
 
-    public String getUserLogin(){
-        return userLogin;
+    public String getUserName(){
+        return userName;
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "title='" + title + '\'' +
+                ", text='" + text + '\'' +
+                ", author='" + userName + '\'' +
+                '}';
     }
 }
