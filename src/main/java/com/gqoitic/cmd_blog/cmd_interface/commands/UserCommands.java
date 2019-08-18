@@ -2,6 +2,7 @@ package com.gqoitic.cmd_blog.cmd_interface.commands;
 
 import com.gqoitic.cmd_blog.cmd_interface.Indentions;
 import com.gqoitic.cmd_blog.cmd_interface.security.Authorization;
+import com.gqoitic.cmd_blog.model.Post;
 import com.gqoitic.cmd_blog.model.User;
 
 import java.util.Scanner;
@@ -36,6 +37,19 @@ public class UserCommands {
         String newPassword = scanner.nextLine();
 
         Authorization.currentUser.setPassword(newPassword);
+        Indentions.indention();
+    }
+
+    public static void newPost(){
+        Indentions.indention();
+
+        System.out.print("\nEnter title: ");
+        String title = scanner.nextLine();
+
+        System.out.print("\nEnter text: ");
+        String text = scanner.nextLine();
+
+        Post newPost = new Post(title, text);
         Indentions.indention();
     }
 }

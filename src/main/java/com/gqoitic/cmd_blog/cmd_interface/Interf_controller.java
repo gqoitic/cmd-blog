@@ -39,6 +39,8 @@ public class Interf_controller {
                 UserCommandsList.changeName();
             } else if(userInput.toUpperCase().equals(UserCommandsList.CHANGEPASSWORD.getCommand())){
                 UserCommandsList.changePassword();
+            } else if(userInput.toUpperCase().equals(UserCommandsList.NEWPOST.getCommand())){
+                  UserCommandsList.newPost();
             }
              else {
                 System.out.printf("%n=            Unknown command \'%s\'   %n%n", userInput);
