@@ -40,7 +40,7 @@ public enum UserCommandsList {
         if(!Objects.isNull(Authorization.currentUser)){
             UserCommands.newPost();
         } else {
-            System.out.print("\n\t=You are not logged in=");
+            System.out.print("\n\t=You are not logged in=\n");
         }
     }
 }
