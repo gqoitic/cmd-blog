@@ -8,7 +8,8 @@ public enum UserCommandsList {
     SIGNOUT("SIGNOUT"),
     CHANGENAME("CHANGENAME"),
     CHANGEPASSWORD("CHANGEPASSWORD"),
-    NEWPOST("NEWPOST");
+    NEWPOST("NEWPOST"),
+    DELETEPOST("DELETEPOST");
 
     private String command;
 

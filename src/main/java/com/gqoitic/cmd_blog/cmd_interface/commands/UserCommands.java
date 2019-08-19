@@ -62,4 +62,22 @@ public class UserCommands {
 
         return true;
     }
+
+    public static boolean deletePost(){
+        Indentions.indention();
+
+        System.out.print("\nEnter title: ");
+        String title = scanner.nextLine();
+
+        for(Post post : Post.listOfPosts){
+            if(post.getTitle().equals(title)){
+                Post.listOfPosts.remove(post);
+
+                System.out.print("\n\n\t=Post deleted successfully=\n");
+                return true;
+            }
+        }
+        System.out.print("\n\n\t=There is no post with such title=\n");
+        return false;
+    }
 }
