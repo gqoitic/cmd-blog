@@ -40,16 +40,26 @@ public class UserCommands {
         Indentions.indention();
     }
 
-    public static void newPost(){
+    public static boolean newPost(){
         Indentions.indention();
 
         System.out.print("\nEnter title: ");
         String title = scanner.nextLine();
+
+        for(Post post : Post.listOfPosts){
+            if(post.getTitle().equals(title)){
+                System.out.print("\n\n\t=The post with the same title already exists!=\n");
+
+                return false;
+            }
+        }
 
         System.out.print("\nEnter text: ");
         String text = scanner.nextLine();
 
         Post newPost = new Post(title, text);
         Indentions.indention();
+
+        return true;
     }
 }
