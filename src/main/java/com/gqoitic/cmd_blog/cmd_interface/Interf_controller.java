@@ -2,7 +2,6 @@ package com.gqoitic.cmd_blog.cmd_interface;
 
 import com.gqoitic.cmd_blog.cmd_interface.commands.CommonCommands;
 import com.gqoitic.cmd_blog.cmd_interface.commands.PostCommandsList;
-import com.gqoitic.cmd_blog.cmd_interface.commands.UserCommands;
 import com.gqoitic.cmd_blog.cmd_interface.commands.UserCommandsList;
 import com.gqoitic.cmd_blog.cmd_interface.security.Authorization;
 import com.gqoitic.cmd_blog.cmd_interface.security.Registration;
@@ -46,7 +45,7 @@ public class Interf_controller {
             } else if(userInput.toUpperCase().equals(PostCommandsList.SHOWALLPOSTS.getCommand())){
                 PostCommandsList.showAllPosts();
             } else if(userInput.toUpperCase().equals(UserCommandsList.DELETEPOST.getCommand())){
-                  UserCommands.deletePost();
+                  UserCommandsList.deletePost();
             }
              else {
                 System.out.printf("%n=            Unknown command \'%s\'   %n%n", userInput);

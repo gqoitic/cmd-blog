@@ -44,4 +44,14 @@ public enum UserCommandsList {
             System.out.print("\n\t=You are not logged in=\n");
         }
     }
+
+    public static boolean deletePost(){
+        if(!Objects.isNull(Authorization.currentUser)){
+            UserCommands.deletePost();
+            return true;
+        } else {
+            System.out.print("\n\t=You are not logged in=\n");
+            return false;
+        }
+    }
 }
