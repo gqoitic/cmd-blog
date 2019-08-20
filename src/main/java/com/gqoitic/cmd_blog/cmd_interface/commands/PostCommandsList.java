@@ -16,11 +16,17 @@ public enum PostCommandsList {
         return command;
     }
 
-    public static void showAllPosts(){
+    public static boolean showAllPosts(){
         Indentions.indention();
+
+        if(Post.listOfPosts.isEmpty()){
+            System.out.print("\n\n\t=There is no posts=\n");
+            return false;
+        }
 
         for(Post post : Post.listOfPosts){
             System.out.println(post);
         }
+        return true;
     }
 }
