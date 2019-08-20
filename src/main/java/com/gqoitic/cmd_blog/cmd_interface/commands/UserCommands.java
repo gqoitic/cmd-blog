@@ -70,14 +70,15 @@ public class UserCommands {
         String title = scanner.nextLine();
 
         for(Post post : Post.listOfPosts){
-            if(post.getTitle().equals(title)){
+            if(post.getTitle().equals(title) && (post.getUserName().equals(Authorization.currentUser.getName()) ||
+                                                 Authorization.currentUser.getName().equals("ADMIN"))){
                 Post.listOfPosts.remove(post);
 
                 System.out.print("\n\n\t=Post deleted successfully=\n");
                 return true;
             }
         }
-        System.out.print("\n\n\t=There is no post with such title=\n");
+        System.out.print("\n\n\t=There is no post with such title or you have not enough rights=\n");
         return false;
     }
 }
