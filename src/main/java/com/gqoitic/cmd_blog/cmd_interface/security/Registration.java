@@ -1,6 +1,7 @@
 package com.gqoitic.cmd_blog.cmd_interface.security;
 
 import com.gqoitic.cmd_blog.cmd_interface.Indentions;
+import com.gqoitic.cmd_blog.cmd_interface.Role;
 import com.gqoitic.cmd_blog.model.User;
 
 import java.util.Objects;
@@ -43,7 +44,7 @@ public class Registration {
             }
         }
 
-        User user = new User(login, password, name);
+        User user = new User(login, password, name, Role.USER);
 
         Indentions.indention();
         return true;

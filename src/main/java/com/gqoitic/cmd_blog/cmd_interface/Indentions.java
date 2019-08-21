@@ -25,7 +25,7 @@ public class Indentions {
         if(Objects.isNull(usr))
             System.out.print("~| ");
         else
-            System.out.print("(" + usr.getName() + ")" + " ~| ");
+            System.out.print("(" + usr.getName() + ") " + usr.getRole() + " ~| ");
     }
 
     static void clear(){
