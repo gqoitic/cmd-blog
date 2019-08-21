@@ -1,6 +1,7 @@
 package com.gqoitic.cmd_blog.cmd_interface.commands;
 
 import com.gqoitic.cmd_blog.cmd_interface.Indentions;
+import com.gqoitic.cmd_blog.cmd_interface.Role;
 import com.gqoitic.cmd_blog.cmd_interface.security.Authorization;
 import com.gqoitic.cmd_blog.model.Post;
 import com.gqoitic.cmd_blog.model.User;
@@ -85,5 +86,28 @@ public class UserCommands {
     public static void deleteUser(){
         User.listOfUsers.remove(Authorization.currentUser);
         Authorization.currentUser = null;
+    }
+
+    public static boolean changeRole(){
+        System.out.print("\nEnter user name: ");
+        String userName = scanner.nextLine();
+
+        System.out.print("\nSelect new role:\n\t=(1) ADMIN\n\t=(2) USER\n");
+        String newRole = scanner.nextLine();
+
+        for(User user : User.listOfUsers){
+            if(user.getName().equals(userName)){
+                if(newRole.equals("1")){
+                    user.setRole(Role.ADMIN);
+                } else if(newRole.equals("2")){
+                    user.setRole(Role.USER);
+                } else {
+                    System.out.print("\n\t=Role number incorrect=\n");
+                }
+                return true;
+            }
+        }
+        System.out.print("\n\n\t=There is no such user=\n");
+        return false;
     }
 }

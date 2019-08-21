@@ -12,7 +12,8 @@ public enum UserCommandsList {
     CHANGEPASSWORD("CHANGEPASSWORD"),
     NEWPOST("NEWPOST"),
     DELETEPOST("DELETEPOST"),
-    DELETEUSER("DELETEUSER");
+    DELETEUSER("DELETEUSER"),
+    CHANGEROLE("CHANGEROLE");
 
     private String command;
     static Scanner scanner = new Scanner(System.in);
@@ -78,6 +79,20 @@ public enum UserCommandsList {
             }
         } else {
             System.out.print("\n\n\t=You are not logged in=\n");
+            return false;
+        }
+    }
+
+    public static boolean changeRole(){
+        if(!Objects.isNull(Authorization.currentUser) &&
+            Authorization.currentUser.getRole().equals(Role.ADMIN))
+        {
+            UserCommands.changeRole();
+            return true;
+        }
+        else
+        {
+            System.out.print("\n\t=You have not enough rights=\n");
             return false;
         }
     }
