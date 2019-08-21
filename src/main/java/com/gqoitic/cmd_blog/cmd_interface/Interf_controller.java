@@ -46,6 +46,8 @@ public class Interf_controller {
                 PostCommandsList.showAllPosts();
             } else if(userInput.toUpperCase().equals(UserCommandsList.DELETEPOST.getCommand())){
                   UserCommandsList.deletePost();
+            } else if(userInput.toUpperCase().equals(UserCommandsList.DELETEUSER.getCommand())){
+                  UserCommandsList.deleteUser();
             }
              else {
                 System.out.printf("%n=            Unknown command \'%s\'   %n%n", userInput);

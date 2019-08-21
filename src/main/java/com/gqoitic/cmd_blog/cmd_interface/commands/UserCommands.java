@@ -81,4 +81,9 @@ public class UserCommands {
         System.out.print("\n\n\t=There is no post with such title or you have not enough rights=\n");
         return false;
     }
+
+    public static void deleteUser(){
+        User.listOfUsers.remove(Authorization.currentUser);
+        Authorization.currentUser = null;
+    }
 }
