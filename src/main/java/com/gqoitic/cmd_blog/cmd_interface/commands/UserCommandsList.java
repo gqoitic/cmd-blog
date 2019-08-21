@@ -1,5 +1,6 @@
 package com.gqoitic.cmd_blog.cmd_interface.commands;
 
+import com.gqoitic.cmd_blog.cmd_interface.Role;
 import com.gqoitic.cmd_blog.cmd_interface.security.Authorization;
 
 import java.util.Objects;
@@ -59,6 +60,12 @@ public enum UserCommandsList {
     }
 
     public static boolean deleteUser(){
+
+        if(Authorization.currentUser.getRole().equals(Role.ADMIN)){
+            System.out.print("\n\n\t=You cannot delete admin user=\n");
+            return false;
+        }
+
         if(!Objects.isNull(Authorization.currentUser)){
             System.out.print("\nAre you sure you want to delete user? (Y/N): ");
             String input = scanner.nextLine();
