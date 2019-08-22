@@ -2,6 +2,7 @@ package com.gqoitic.cmd_blog.cmd_interface.commands;
 
 import com.gqoitic.cmd_blog.cmd_interface.Role;
 import com.gqoitic.cmd_blog.cmd_interface.security.Authorization;
+import com.gqoitic.cmd_blog.model.User;
 
 import java.util.Objects;
 import java.util.Scanner;
@@ -13,7 +14,8 @@ public enum UserCommandsList {
     NEWPOST("NEWPOST"),
     DELETEPOST("DELETEPOST"),
     DELETEUSER("DELETEUSER"),
-    CHANGEROLE("CHANGEROLE");
+    CHANGEROLE("CHANGEROLE"),
+    SHOWALLUSERS("SHOWALLUSERS");
 
     private String command;
     static Scanner scanner = new Scanner(System.in);
@@ -95,5 +97,20 @@ public enum UserCommandsList {
             System.out.print("\n\t=You have not enough rights=\n");
             return false;
         }
+    }
+
+    public static boolean showAllUsers(){
+        if(Objects.isNull(Authorization.currentUser)){
+            System.out.print("\n\t=You are not logged in=\n");
+            return false;
+        }
+
+        if(!Authorization.currentUser.getRole().equals(Role.ADMIN)){
+            System.out.print("\n\t=You have not enough rights=\n");
+            return false;
+        }
+
+        UserCommands.showAllUsers();
+        return true;
     }
 }

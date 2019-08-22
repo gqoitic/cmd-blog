@@ -50,6 +50,8 @@ public class Interf_controller {
                   UserCommandsList.deleteUser();
             } else if(userInput.toUpperCase().equals(UserCommandsList.CHANGEROLE.getCommand())){
                   UserCommandsList.changeRole();
+            } else if(userInput.toUpperCase().equals(UserCommandsList.SHOWALLUSERS.getCommand())){
+                  UserCommandsList.showAllUsers();
             }
              else {
                 System.out.printf("%n=            Unknown command \'%s\'   %n%n", userInput);

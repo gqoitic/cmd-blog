@@ -110,4 +110,14 @@ public class UserCommands {
         System.out.print("\n\n\t=There is no such user=\n");
         return false;
     }
+
+    public static void showAllUsers(){
+        Indentions.indention();
+
+        for(User user : User.listOfUsers){
+            System.out.println(user);
+        }
+
+        Indentions.indention();
+    }
 }
