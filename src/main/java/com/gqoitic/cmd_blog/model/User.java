@@ -60,10 +60,9 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
-                "login='" + login + '\'' +
-                ", password='" + password + '\'' +
-                ", name='" + name + '\'' +
-                '}';
+        return "login: |" + login +
+               "| password: |" + password +
+               "| name: |" + name +
+               "| role: " + role;
     }
 }
