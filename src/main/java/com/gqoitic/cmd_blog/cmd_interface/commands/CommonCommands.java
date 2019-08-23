@@ -1,5 +1,6 @@
 package com.gqoitic.cmd_blog.cmd_interface.commands;
 
+import com.gqoitic.cmd_blog.cmd_interface.Role;
 import com.gqoitic.cmd_blog.cmd_interface.security.Authorization;
 
 import java.util.Objects;
@@ -23,7 +24,8 @@ public enum CommonCommands {
     }
 
     public static void help(){
-        if(!Objects.isNull(Authorization.currentUser))
+        if(!Objects.isNull(Authorization.currentUser) &&
+           Authorization.currentUser.getRole().equals(Role.ADMIN))
             System.out.print("\n\n\t[exit] [login] [signout] [changeName] [clear]\n" +
                              "\t[changePassword] [newPost] [showAllPosts] [deletePost]\n" +
                              "\t[deleteUser] [changeRole] [showAllUsers]\n\n");
