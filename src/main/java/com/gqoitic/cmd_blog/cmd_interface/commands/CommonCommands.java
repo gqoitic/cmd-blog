@@ -24,11 +24,16 @@ public enum CommonCommands {
     }
 
     public static void help(){
-        if(!Objects.isNull(Authorization.currentUser) &&
-           Authorization.currentUser.getRole().equals(Role.ADMIN))
-            System.out.print("\n\n\t[exit] [login] [signout] [changeName] [clear]\n" +
-                             "\t[changePassword] [newPost] [showAllPosts] [deletePost]\n" +
-                             "\t[deleteUser] [changeRole] [showAllUsers]\n\n");
+        if(!Objects.isNull(Authorization.currentUser))
+            if(Authorization.currentUser.getRole().equals(Role.ADMIN))
+                System.out.print("\n\n\t[exit] [login] [signout] [changeName] [clear]\n" +
+                                 "\t[changePassword] [newPost] [showAllPosts] [deletePost]\n" +
+                                 "\t[deleteUser] [changeRole] [showAllUsers]\n\n");
+            else
+                System.out.print("\n\n\t[exit] [login] [signout] [changeName] [clear]\n" +
+                                 "\t[changePassword] [newPost] [showAllPosts] [deletePost]\n" +
+                                 "\t[deleteUser]\n\n");
+
         else
             System.out.print("\n\n\t[exit] [login] [registration] [clear] [showAllPosts]\n\n");
     }
