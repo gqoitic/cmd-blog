@@ -2,7 +2,6 @@ package com.gqoitic.cmd_blog.cmd_interface.commands;
 
 import com.gqoitic.cmd_blog.cmd_interface.Role;
 import com.gqoitic.cmd_blog.cmd_interface.security.Authorization;
-import com.gqoitic.cmd_blog.model.User;
 
 import java.util.Objects;
 import java.util.Scanner;

@@ -52,6 +52,8 @@ public class Interf_controller {
                   UserCommandsList.changeRole();
             } else if(userInput.toUpperCase().equals(UserCommandsList.SHOWALLUSERS.getCommand())){
                   UserCommandsList.showAllUsers();
+            } else if(userInput.toUpperCase().equals(PostCommandsList.SHOWPOSTSBYTITLE.getCommand())){
+                  PostCommandsList.showPostsByTitle();
             }
              else {
                 System.out.printf("%n=            Unknown command \'%s\'   %n%n", userInput);

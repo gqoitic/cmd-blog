@@ -4,7 +4,9 @@ import com.gqoitic.cmd_blog.cmd_interface.Indentions;
 import com.gqoitic.cmd_blog.model.Post;
 
 public enum PostCommandsList {
-    SHOWALLPOSTS("SHOWALLPOSTS");
+    SHOWALLPOSTS("SHOWALLPOSTS"),
+    SHOWPOSTSBYTITLE("SHOWPOSTSBYTITLE"),
+    SHOWPOSTSBYAUTHOR("SHOWPOSTSBYAUTHOR");
 
     private String command;
 
@@ -28,5 +30,9 @@ public enum PostCommandsList {
             System.out.println(post);
         }
         return true;
+    }
+
+    public static void showPostsByTitle(){
+        PostCommands.showPostsByTitle();
     }
 }
