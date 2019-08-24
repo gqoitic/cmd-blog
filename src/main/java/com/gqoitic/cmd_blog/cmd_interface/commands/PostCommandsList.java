@@ -6,7 +6,8 @@ import com.gqoitic.cmd_blog.model.Post;
 public enum PostCommandsList {
     SHOWALLPOSTS("SHOWALLPOSTS"),
     SHOWPOSTSBYTITLE("SHOWPOSTSBYTITLE"),
-    SHOWPOSTSBYAUTHOR("SHOWPOSTSBYAUTHOR");
+    SHOWPOSTSBYAUTHOR("SHOWPOSTSBYAUTHOR"),
+    MYPOSTS("MYPOSTS");
 
     private String command;
 
@@ -38,5 +39,9 @@ public enum PostCommandsList {
 
     public static void showPostsByAuthor(){
         PostCommands.showPostsByAuthor();
+    }
+
+    public static void myPosts(){
+        PostCommands.myPosts();
     }
 }

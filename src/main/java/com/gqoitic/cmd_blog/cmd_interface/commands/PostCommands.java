@@ -1,6 +1,7 @@
 package com.gqoitic.cmd_blog.cmd_interface.commands;
 
 import com.gqoitic.cmd_blog.cmd_interface.Indentions;
+import com.gqoitic.cmd_blog.cmd_interface.security.Authorization;
 import com.gqoitic.cmd_blog.model.Post;
 
 import java.util.Scanner;
@@ -37,5 +38,15 @@ public class PostCommands {
         }
 
         Indentions.indention();
+    }
+
+    public static void myPosts(){
+        Indentions.indention();
+
+        for(Post post : Post.listOfPosts){
+            if(post.getUserName().equals(Authorization.currentUser.getName())){
+                System.out.println(post);
+            }
+        }
     }
 }
