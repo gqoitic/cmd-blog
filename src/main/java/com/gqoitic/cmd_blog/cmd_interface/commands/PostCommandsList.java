@@ -35,4 +35,8 @@ public enum PostCommandsList {
     public static void showPostsByTitle(){
         PostCommands.showPostsByTitle();
     }
+
+    public static void showPostsByAuthor(){
+        PostCommands.showPostsByAuthor();
+    }
 }

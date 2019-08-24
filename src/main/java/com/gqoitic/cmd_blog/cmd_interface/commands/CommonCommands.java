@@ -28,11 +28,12 @@ public enum CommonCommands {
             if(Authorization.currentUser.getRole().equals(Role.ADMIN))
                 System.out.print("\n\n\t[exit] [login] [signout] [changeName] [clear]\n" +
                                  "\t[changePassword] [newPost] [showAllPosts] [deletePost]\n" +
-                                 "\t[deleteUser] [changeRole] [showAllUsers]\n\n");
+                                 "\t[deleteUser] [changeRole] [showAllUsers] [showPostsByTitle]\n" +
+                                 "\t[showPostsByAuthor]\n\n");
             else
                 System.out.print("\n\n\t[exit] [login] [signout] [changeName] [clear]\n" +
                                  "\t[changePassword] [newPost] [showAllPosts] [deletePost]\n" +
-                                 "\t[deleteUser]\n\n");
+                                 "\t[deleteUser] [showPostsByTitle] [showPostsByAuthor]\n\n");
 
         else
             System.out.print("\n\n\t[exit] [login] [registration] [clear] [showAllPosts]\n\n");

@@ -23,4 +23,19 @@ public class PostCommands {
 
         Indentions.indention();
     }
+
+    public static void showPostsByAuthor(){
+        Indentions.indention();
+
+        System.out.print("Enter author: ");
+        String author = scanner.nextLine();
+
+        for(Post post : Post.listOfPosts){
+            if(post.getUserName().toUpperCase().equals(author.toUpperCase())){
+                System.out.println(post);
+            }
+        }
+
+        Indentions.indention();
+    }
 }
