@@ -29,11 +29,12 @@ public enum CommonCommands {
                 System.out.print("\n\n\t[exit] [login] [signout] [changeName] [clear]\n" +
                                  "\t[changePassword] [newPost] [showAllPosts] [deletePost]\n" +
                                  "\t[deleteUser] [changeRole] [showAllUsers] [showPostsByTitle]\n" +
-                                 "\t[showPostsByAuthor] [myPosts]\n\n");
+                                 "\t[showPostsByAuthor] [myPosts] [changeTitle]\n\n");
             else
                 System.out.print("\n\n\t[exit] [login] [signout] [changeName] [clear]\n" +
                                  "\t[changePassword] [newPost] [showAllPosts] [deletePost]\n" +
-                                 "\t[deleteUser] [showPostsByTitle] [showPostsByAuthor] [myPosts]\n\n");
+                                 "\t[deleteUser] [showPostsByTitle] [showPostsByAuthor] [myPosts]\n" +
+                                 "\t[changeTitle]\n\n");
 
         else
             System.out.print("\n\n\t[exit] [login] [registration] [clear] [showAllPosts]\n\n");

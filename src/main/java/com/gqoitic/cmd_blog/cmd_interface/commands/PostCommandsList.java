@@ -1,13 +1,17 @@
 package com.gqoitic.cmd_blog.cmd_interface.commands;
 
 import com.gqoitic.cmd_blog.cmd_interface.Indentions;
+import com.gqoitic.cmd_blog.cmd_interface.security.Authorization;
 import com.gqoitic.cmd_blog.model.Post;
+
+import java.util.Objects;
 
 public enum PostCommandsList {
     SHOWALLPOSTS("SHOWALLPOSTS"),
     SHOWPOSTSBYTITLE("SHOWPOSTSBYTITLE"),
     SHOWPOSTSBYAUTHOR("SHOWPOSTSBYAUTHOR"),
-    MYPOSTS("MYPOSTS");
+    MYPOSTS("MYPOSTS"),
+    CHANGETITLE("CHANGETITLE");
 
     private String command;
 
@@ -43,5 +47,15 @@ public enum PostCommandsList {
 
     public static void myPosts(){
         PostCommands.myPosts();
+    }
+
+    public static boolean changeTitle(){
+        if(Objects.isNull(Authorization.currentUser)){
+            System.out.print("\n\n\t=You are not logged in=\n");
+            return false;
+        } else {
+            PostCommands.changeTitle();
+            return true;
+        }
     }
 }

@@ -58,6 +58,8 @@ public class Interf_controller {
                   PostCommandsList.showPostsByAuthor();
             } else if(userInput.toUpperCase().equals(PostCommandsList.MYPOSTS.getCommand())){
                   PostCommandsList.myPosts();
+            } else if(userInput.toUpperCase().equals(PostCommandsList.CHANGETITLE.getCommand())){
+                  PostCommandsList.changeTitle();
             }
              else {
                 System.out.printf("%n=            Unknown command \'%s\'   %n%n", userInput);
