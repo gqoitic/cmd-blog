@@ -81,4 +81,28 @@ public class PostCommands {
         System.out.print("\n\n\t=Post not found or you have not enough rights=\n");
         return false;
     }
+
+    public static boolean changeText(){
+        Indentions.indention();
+
+        System.out.print("Enter title: ");
+        String title = scanner.nextLine();
+
+        System.out.print("Enter new text: ");
+        String newText = scanner.nextLine();
+
+        for(Post post : Post.listOfPosts){
+            if(post.getTitle().equals(title) &&
+               Authorization.currentUser.getRole().equals(Role.ADMIN) ||
+               Authorization.currentUser.getName().equals(post.getUserName()))
+            {
+                post.setText(newText);
+                System.out.print("\n\n\t=Successfully=\n");
+                return true;
+            }
+        }
+
+        System.out.print("\n\n\t=Post not found or you have not enough rights=\n");
+        return false;
+    }
 }

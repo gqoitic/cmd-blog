@@ -11,7 +11,8 @@ public enum PostCommandsList {
     SHOWPOSTSBYTITLE("SHOWPOSTSBYTITLE"),
     SHOWPOSTSBYAUTHOR("SHOWPOSTSBYAUTHOR"),
     MYPOSTS("MYPOSTS"),
-    CHANGETITLE("CHANGETITLE");
+    CHANGETITLE("CHANGETITLE"),
+    CHANGETEXT("CHANGETEXT");
 
     private String command;
 
@@ -55,6 +56,16 @@ public enum PostCommandsList {
             return false;
         } else {
             PostCommands.changeTitle();
+            return true;
+        }
+    }
+
+    public static boolean changeText(){
+        if(Objects.isNull(Authorization.currentUser)){
+            System.out.print("\n\n\t=You are not logged in=\n");
+            return false;
+        } else {
+            PostCommands.changeText();
             return true;
         }
     }
