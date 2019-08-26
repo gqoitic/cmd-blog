@@ -14,7 +14,8 @@ public enum UserCommandsList {
     DELETEPOST("DELETEPOST"),
     DELETEUSER("DELETEUSER"),
     CHANGEROLE("CHANGEROLE"),
-    SHOWALLUSERS("SHOWALLUSERS");
+    SHOWALLUSERS("SHOWALLUSERS"),
+    DELETESELECTEDUSER("DELETESELECTEDUSER");
 
     private String command;
     static Scanner scanner = new Scanner(System.in);
@@ -110,6 +111,21 @@ public enum UserCommandsList {
         }
 
         UserCommands.showAllUsers();
+        return true;
+    }
+
+    public static boolean deleteSelectedUser(){
+        if(Objects.isNull(Authorization.currentUser)){
+            System.out.print("\n\n\t=You are not logged in=\n");
+            return false;
+        }
+
+        if(!Authorization.currentUser.getRole().equals(Role.ADMIN)){
+            System.out.print("\n\n\t=You have not enough rights=\n");
+            return false;
+        }
+
+        UserCommands.deleteSelectedUser();
         return true;
     }
 }

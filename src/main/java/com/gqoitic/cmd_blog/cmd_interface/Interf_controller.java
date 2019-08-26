@@ -103,7 +103,12 @@ public class Interf_controller {
             } else if(userInput.toUpperCase().replaceAll("\\s+", "")
                     .equals(CHANGETEXT.getCommand())){
                   PostCommandsList.changeText();
+
+            } else if(userInput.toUpperCase().replaceAll("\\s+", "")
+                    .equals(DELETESELECTEDUSER.getCommand())){
+                  UserCommandsList.deleteSelectedUser();
             }
+
              else {
                 System.out.printf("%n=            Unknown command \'%s\'   %n%n", userInput);
             }

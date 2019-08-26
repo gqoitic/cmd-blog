@@ -120,4 +120,26 @@ public class UserCommands {
 
         Indentions.indention();
     }
+
+    public static boolean deleteSelectedUser(){
+        Indentions.indention();
+
+        System.out.print("\nEnter name: ");
+        String name = scanner.nextLine();
+
+        for(User user : User.listOfUsers){
+            if(user.getName().equals(name)){
+                if(user.getRole().equals(Role.ADMIN)){
+                    System.out.print("\n\n\t=You cannot delete admin user=\n");
+                    return false;
+                }
+                User.listOfUsers.remove(user);
+                System.out.print("\n\n\t=Successfully=\n");
+                return true;
+            }
+        }
+
+        System.out.print("\n\n\t=User not found!=\n");
+        return false;
+    }
 }
