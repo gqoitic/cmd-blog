@@ -31,6 +31,13 @@ public enum CommonCommands {
                                  "\t[deleteUser] [changeRole] [showAllUsers] [showPostsByTitle]\n" +
                                  "\t[showPostsByAuthor] [myPosts] [changeTitle] [changeText]\n" +
                                  "\t[deleteSelectedUser]\n\n");
+
+            else if(Authorization.currentUser.getRole().equals(Role.MODER))
+                System.out.print("\n\n\t[exit] [login] [signout] [changeName] [clear]\n" +
+                                 "\t[changePassword] [newPost] [showAllPosts] [deletePost]\n" +
+                                 "\t[deleteUser] [showAllUsers] [showPostsByTitle] [showPostsByAuthor]\n" +
+                                 "\t[myPosts] [changeTitle] [changeText]\n\n");
+
             else
                 System.out.print("\n\n\t[exit] [login] [signout] [changeName] [clear]\n" +
                                  "\t[changePassword] [newPost] [showAllPosts] [deletePost]\n" +

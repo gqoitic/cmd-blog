@@ -92,7 +92,7 @@ public class UserCommands {
         System.out.print("\nEnter user name: ");
         String userName = scanner.nextLine();
 
-        System.out.print("\nSelect new role:\n\t=(1) ADMIN\n\t=(2) USER\n");
+        System.out.print("\nSelect new role:\n\t=(1) ADMIN\n\t=(2) USER\n\t=(3) MODER\n");
         String newRole = scanner.nextLine();
 
         for(User user : User.listOfUsers){
@@ -101,6 +101,8 @@ public class UserCommands {
                     user.setRole(Role.ADMIN);
                 } else if(newRole.equals("2")){
                     user.setRole(Role.USER);
+                } else if(newRole.equals("3")){
+                    user.setRole(Role.MODER);
                 } else {
                     System.out.print("\n\t=Role number incorrect=\n");
                 }

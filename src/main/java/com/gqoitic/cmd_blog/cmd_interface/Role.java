@@ -2,7 +2,8 @@ package com.gqoitic.cmd_blog.cmd_interface;
 
 public enum Role {
     USER("[USER]"),
-    ADMIN("[ADMIN]");
+    ADMIN("[ADMIN]"),
+    MODER("[MODER]");
 
     private String role;
 

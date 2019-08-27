@@ -69,8 +69,9 @@ public class PostCommands {
 
         for(Post post : Post.listOfPosts){
             if(post.getTitle().equals(oldTitle) &&
-                    (Authorization.currentUser.getRole().equals(Role.ADMIN) ||
-                     post.getUserName().equals(Authorization.currentUser.getName())))
+                    (Authorization.currentUser.getRole().equals(Role.ADMIN)         ||
+                     post.getUserName().equals(Authorization.currentUser.getName()) ||
+                     Authorization.currentUser.getRole().equals(Role.MODER)))
             {
                 post.setTitle(newTitle);
                 System.out.print("\n\n\t=Successfully=\n");
@@ -93,8 +94,9 @@ public class PostCommands {
 
         for(Post post : Post.listOfPosts){
             if(post.getTitle().equals(title) &&
-               Authorization.currentUser.getRole().equals(Role.ADMIN) ||
-               Authorization.currentUser.getName().equals(post.getUserName()))
+               Authorization.currentUser.getRole().equals(Role.ADMIN)         ||
+               Authorization.currentUser.getName().equals(post.getUserName()) ||
+               Authorization.currentUser.getRole().equals(Role.MODER))
             {
                 post.setText(newText);
                 System.out.print("\n\n\t=Successfully=\n");
