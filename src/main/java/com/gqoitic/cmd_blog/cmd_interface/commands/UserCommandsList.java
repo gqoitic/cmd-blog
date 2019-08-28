@@ -7,25 +7,31 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public enum UserCommandsList {
-    SIGNOUT("SIGNOUT"),
-    CHANGENAME("CHANGENAME"),
-    CHANGEPASSWORD("CHANGEPASSWORD"),
-    NEWPOST("NEWPOST"),
-    DELETEPOST("DELETEPOST"),
-    DELETEUSER("DELETEUSER"),
-    CHANGEROLE("CHANGEROLE"),
-    SHOWALLUSERS("SHOWALLUSERS"),
-    DELETESELECTEDUSER("DELETESELECTEDUSER");
+    SIGNOUT("SIGNOUT", "SO"),
+    CHANGENAME("CHANGENAME", "CNAME"),
+    CHANGEPASSWORD("CHANGEPASSWORD", "CPSW"),
+    NEWPOST("NEWPOST", "NP"),
+    DELETEPOST("DELETEPOST", "DP"),
+    DELETEUSER("DELETEUSER", "DU"),
+    CHANGEROLE("CHANGEROLE", "CROLE"),
+    SHOWALLUSERS("SHOWALLUSERS", "AU"),
+    DELETESELECTEDUSER("DELETESELECTEDUSER", "DSU");
 
     private String command;
+    private String shortCommand;
     static Scanner scanner = new Scanner(System.in);
 
-    UserCommandsList(String command){
+    UserCommandsList(String command, String shortCommand){
         this.command = command;
+        this.shortCommand = shortCommand;
     }
 
     public String getCommand(){
         return command;
+    }
+
+    public String getShortCommand(){
+        return shortCommand;
     }
 
     public static void changeName(){

@@ -24,88 +24,108 @@ public class Interf_controller {
         while(session){
             Indentions.pointer();
             String userInput = scanner.nextLine();
+            String formattedUserInput = userInput.toUpperCase().replaceAll("\\s+", "");
 
-            if(userInput.toUpperCase().replaceAll("\\s+", "")
-                    .equals(LOGIN.getCommand())){
+            if(formattedUserInput.equals(LOGIN.getCommand())                           ||
+               formattedUserInput.equals(LOGIN.getShortCommnad()))
+            {
                 Authorization.login();
 
-            } else if(userInput.toUpperCase().replaceAll("\\s+", "")
-                    .equals(EXIT.getCommand())){
+            } else if(formattedUserInput.equals(EXIT.getCommand())                     ||
+                      formattedUserInput.equals(EXIT.getShortCommnad()))
+            {
                 session = false;
 
-            } else if(userInput.toUpperCase().replaceAll("\\s+", "")
-
-                    .equals(REGISTRATION.getCommand())){
+            } else if(formattedUserInput.equals(REGISTRATION.getCommand())             ||
+                      formattedUserInput.equals(REGISTRATION.getShortCommnad()))
+            {
                 Registration.registration();
 
-            } else if(userInput.toUpperCase().replaceAll("\\s+", "")
-                    .equals(SIGNOUT.getCommand())){
+            } else if(formattedUserInput.equals(SIGNOUT.getCommand())                  ||
+                      formattedUserInput.equals(SIGNOUT.getShortCommand()))
+            {
                 Authorization.signOut();
 
-            } else if(userInput.toUpperCase().replaceAll("\\s+", "")
-                    .equals(CLEAR.getCommand())){
+            } else if(formattedUserInput.equals(CLEAR.getCommand())                    ||
+                      formattedUserInput.equals(CLEAR.getShortCommnad()))
+            {
                 Indentions.clear();
 
-            } else if(userInput.toUpperCase().replaceAll("\\s+", "")
-                    .equals(HELP.getCommand())){
+            } else if(formattedUserInput.equals(HELP.getCommand())                     ||
+                      formattedUserInput.equals(HELP.getShortCommnad()))
+            {
                 help();
 
-            } else if(userInput.replaceAll("\\s+","").length() < 1) {}
+            } else if(formattedUserInput.length() < 1) {}
 
-              else if(userInput.toUpperCase().replaceAll("\\s+", "")
-                    .equals(CHANGENAME.getCommand())){
+              else if(formattedUserInput.equals(CHANGENAME.getCommand())               ||
+                      formattedUserInput.equals(CHANGENAME.getShortCommand()))
+              {
                 UserCommandsList.changeName();
 
-            } else if(userInput.toUpperCase().replaceAll("\\s+", "")
-                    .equals(CHANGEPASSWORD.getCommand())){
+            } else if(formattedUserInput.equals(CHANGEPASSWORD.getCommand())           ||
+                      formattedUserInput.equals(CHANGEPASSWORD.getShortCommand()))
+            {
                 UserCommandsList.changePassword();
 
-            } else if(userInput.toUpperCase().replaceAll("\\s+", "")
-                    .equals(NEWPOST.getCommand())){
+            } else if(formattedUserInput.equals(NEWPOST.getCommand())                  ||
+                      formattedUserInput.equals(NEWPOST.getShortCommand()))
+            {
                   UserCommandsList.newPost();
 
-            } else if(userInput.toUpperCase().replaceAll("\\s+", "")
-                    .equals(SHOWALLPOSTS.getCommand())){
+            } else if(formattedUserInput.equals(SHOWALLPOSTS.getCommand())             ||
+                      formattedUserInput.equals(SHOWALLPOSTS.getShortCommand()))
+            {
                 PostCommandsList.showAllPosts();
 
-            } else if(userInput.toUpperCase().replaceAll("\\s+", "")
-                    .equals(DELETEPOST.getCommand())){
+            } else if(formattedUserInput.equals(DELETEPOST.getCommand())               ||
+                      formattedUserInput.equals(DELETEPOST.getShortCommand()))
+            {
                   UserCommandsList.deletePost();
 
-            } else if(userInput.toUpperCase().replaceAll("\\s+", "")
-                    .equals(DELETEUSER.getCommand())){
+            } else if(formattedUserInput.equals(DELETEUSER.getCommand())               ||
+                      formattedUserInput.equals(DELETEUSER.getShortCommand()))
+            {
                   UserCommandsList.deleteUser();
 
-            } else if(userInput.toUpperCase().replaceAll("\\s+", "")
-                    .equals(CHANGEROLE.getCommand())){
+            } else if(formattedUserInput.equals(CHANGEROLE.getCommand())               ||
+                      formattedUserInput.equals(CHANGEROLE.getShortCommand()))
+            {
                   UserCommandsList.changeRole();
 
-            } else if(userInput.toUpperCase().replaceAll("\\s+", "")
-                    .equals(SHOWALLUSERS.getCommand())){
+            } else if(formattedUserInput.equals(SHOWALLUSERS.getCommand())             ||
+                      formattedUserInput.equals(SHOWALLUSERS.getShortCommand()))
+            {
                   UserCommandsList.showAllUsers();
 
-            } else if(userInput.toUpperCase().replaceAll("\\s+", "")
-                    .equals(SHOWPOSTSBYTITLE.getCommand())){
+            } else if(formattedUserInput.equals(SHOWPOSTSBYTITLE.getCommand())         ||
+                      formattedUserInput.equals(SHOWPOSTSBYTITLE.getShortCommand()))
+            {
                   PostCommandsList.showPostsByTitle();
 
-            } else if(userInput.toUpperCase().replaceAll("\\s+", "")
-                    .equals(SHOWPOSTSBYAUTHOR.getCommand())){
+            } else if(formattedUserInput.equals(SHOWPOSTSBYAUTHOR.getCommand())        ||
+                      formattedUserInput.equals(SHOWPOSTSBYAUTHOR.getShortCommand()))
+            {
                   PostCommandsList.showPostsByAuthor();
 
-            } else if(userInput.toUpperCase().replaceAll("\\s+", "")
-                    .equals(MYPOSTS.getCommand())){
+            } else if(formattedUserInput.equals(MYPOSTS.getCommand())                  ||
+                      formattedUserInput.equals(MYPOSTS.getShortCommand()))
+            {
                   PostCommandsList.myPosts();
 
-            } else if(userInput.toUpperCase().replaceAll("\\s+", "")
-                    .equals(CHANGETITLE.getCommand())){
+            } else if(formattedUserInput.equals(CHANGETITLE.getCommand())              ||
+                      formattedUserInput.equals(CHANGETITLE.getShortCommand()))
+            {
                   PostCommandsList.changeTitle();
 
-            } else if(userInput.toUpperCase().replaceAll("\\s+", "")
-                    .equals(CHANGETEXT.getCommand())){
+            } else if(formattedUserInput.equals(CHANGETEXT.getCommand())               ||
+                      formattedUserInput.equals(CHANGETEXT.getShortCommand()))
+            {
                   PostCommandsList.changeText();
 
-            } else if(userInput.toUpperCase().replaceAll("\\s+", "")
-                    .equals(DELETESELECTEDUSER.getCommand())){
+            } else if(formattedUserInput.equals(DELETESELECTEDUSER.getCommand())       ||
+                      formattedUserInput.equals(DELETESELECTEDUSER.getShortCommand()))
+            {
                   UserCommandsList.deleteSelectedUser();
             }
 

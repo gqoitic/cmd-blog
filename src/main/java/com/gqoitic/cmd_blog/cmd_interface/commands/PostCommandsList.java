@@ -7,21 +7,27 @@ import com.gqoitic.cmd_blog.model.Post;
 import java.util.Objects;
 
 public enum PostCommandsList {
-    SHOWALLPOSTS("SHOWALLPOSTS"),
-    SHOWPOSTSBYTITLE("SHOWPOSTSBYTITLE"),
-    SHOWPOSTSBYAUTHOR("SHOWPOSTSBYAUTHOR"),
-    MYPOSTS("MYPOSTS"),
-    CHANGETITLE("CHANGETITLE"),
-    CHANGETEXT("CHANGETEXT");
+    SHOWALLPOSTS("SHOWALLPOSTS", "SAP"),
+    SHOWPOSTSBYTITLE("SHOWPOSTSBYTITLE", "PBT"),
+    SHOWPOSTSBYAUTHOR("SHOWPOSTSBYAUTHOR", "PBA"),
+    MYPOSTS("MYPOSTS", "MP"),
+    CHANGETITLE("CHANGETITLE", "CTITLE"),
+    CHANGETEXT("CHANGETEXT", "CTEXT");
 
     private String command;
+    private String shortCommand;
 
-    PostCommandsList(String command){
+    PostCommandsList(String command, String shortCommand){
         this.command = command;
+        this.shortCommand = shortCommand;
     }
 
     public String getCommand(){
         return command;
+    }
+
+    public String getShortCommand(){
+        return shortCommand;
     }
 
     public static boolean showAllPosts(){

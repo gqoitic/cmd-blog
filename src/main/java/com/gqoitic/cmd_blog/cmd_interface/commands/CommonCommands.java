@@ -6,21 +6,27 @@ import com.gqoitic.cmd_blog.cmd_interface.security.Authorization;
 import java.util.Objects;
 
 public enum CommonCommands {
-    EXIT("EXIT"),
-    LOGIN("LOGIN"),
-    REGISTRATION("REGISTRATION"),
-    CLEAR("CLEAR"),
-    HELP("HELP");
+    EXIT("EXIT", "Q"),
+    LOGIN("LOGIN", "LG"),
+    REGISTRATION("REGISTRATION", "RG"),
+    CLEAR("CLEAR", "CL"),
+    HELP("HELP", "H");
 
 
     private String command;
+    private String shortCommand;
 
-    CommonCommands(String command){
+    CommonCommands(String command, String shortCommand){
         this.command = command;
+        this.shortCommand = shortCommand;
     }
 
     public String getCommand(){
         return command;
+    }
+
+    public String getShortCommnad(){
+        return shortCommand;
     }
 
     public static void help(){
