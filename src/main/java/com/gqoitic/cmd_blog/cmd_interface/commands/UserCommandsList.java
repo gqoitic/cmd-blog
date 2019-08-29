@@ -58,6 +58,7 @@ public enum UserCommandsList {
         }
     }
 
+    @SuppressWarnings("UnusedReturnValue")
     public static boolean deletePost(){
         if(!Objects.isNull(Authorization.currentUser)){
             UserCommands.deletePost();
@@ -68,6 +69,7 @@ public enum UserCommandsList {
         }
     }
 
+    @SuppressWarnings("UnusedReturnValue")
     public static boolean deleteUser(){
 
         if(Authorization.currentUser.getRole().equals(Role.ADMIN)){
@@ -91,6 +93,7 @@ public enum UserCommandsList {
         }
     }
 
+    @SuppressWarnings("UnusedReturnValue")
     public static boolean changeRole(){
         if(!Objects.isNull(Authorization.currentUser) &&
             Authorization.currentUser.getRole().equals(Role.ADMIN))
@@ -105,6 +108,7 @@ public enum UserCommandsList {
         }
     }
 
+    @SuppressWarnings("UnusedReturnValue")
     public static boolean showAllUsers(){
         if(Objects.isNull(Authorization.currentUser)){
             System.out.print("\n\t=You are not logged in=\n");
@@ -120,6 +124,7 @@ public enum UserCommandsList {
         return true;
     }
 
+    @SuppressWarnings("UnusedReturnValue")
     public static boolean deleteSelectedUser(){
         if(Objects.isNull(Authorization.currentUser)){
             System.out.print("\n\n\t=You are not logged in=\n");

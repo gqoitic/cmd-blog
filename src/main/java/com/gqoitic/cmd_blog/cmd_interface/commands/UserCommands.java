@@ -8,11 +8,12 @@ import com.gqoitic.cmd_blog.model.User;
 
 import java.util.Scanner;
 
-public class UserCommands {
+class UserCommands {
 
-    static Scanner scanner = new Scanner(System.in);
+    private static Scanner scanner = new Scanner(System.in);
 
-    public static boolean changeName(){
+    @SuppressWarnings("UnusedReturnValue")
+    static boolean changeName(){
         Indentions.indention();
 
         System.out.print("\nEnter new name: ");
@@ -31,7 +32,7 @@ public class UserCommands {
         return true;
     }
 
-    public static void changePassword(){
+    static void changePassword(){
         Indentions.indention();
 
         System.out.print("\nEnter new password: ");
@@ -41,7 +42,8 @@ public class UserCommands {
         Indentions.indention();
     }
 
-    public static boolean newPost(){
+    @SuppressWarnings("UnusedReturnValue")
+    static boolean newPost(){
         Indentions.indention();
 
         System.out.print("\nEnter title: ");
@@ -58,13 +60,14 @@ public class UserCommands {
         System.out.print("\nEnter text: ");
         String text = scanner.nextLine();
 
-        Post newPost = new Post(title, text);
+        new Post(title, text);
         Indentions.indention();
 
         return true;
     }
 
-    public static boolean deletePost(){
+    @SuppressWarnings("UnusedReturnValue")
+    static boolean deletePost(){
         Indentions.indention();
 
         System.out.print("\nEnter title: ");
@@ -83,12 +86,13 @@ public class UserCommands {
         return false;
     }
 
-    public static void deleteUser(){
+    static void deleteUser(){
         User.listOfUsers.remove(Authorization.currentUser);
         Authorization.currentUser = null;
     }
 
-    public static boolean changeRole(){
+    @SuppressWarnings("UnusedReturnValue")
+    static boolean changeRole(){
         System.out.print("\nEnter user name: ");
         String userName = scanner.nextLine();
 
@@ -97,14 +101,19 @@ public class UserCommands {
 
         for(User user : User.listOfUsers){
             if(user.getName().equals(userName)){
-                if(newRole.equals("1")){
-                    user.setRole(Role.ADMIN);
-                } else if(newRole.equals("2")){
-                    user.setRole(Role.USER);
-                } else if(newRole.equals("3")){
-                    user.setRole(Role.MODER);
-                } else {
-                    System.out.print("\n\t=Role number incorrect=\n");
+                switch (newRole) {
+                    case "1":
+                        user.setRole(Role.ADMIN);
+                        break;
+                    case "2":
+                        user.setRole(Role.USER);
+                        break;
+                    case "3":
+                        user.setRole(Role.MODER);
+                        break;
+                    default:
+                        System.out.print("\n\t=Role number incorrect=\n");
+                        break;
                 }
                 return true;
             }
@@ -113,7 +122,7 @@ public class UserCommands {
         return false;
     }
 
-    public static void showAllUsers(){
+    static void showAllUsers(){
         Indentions.indention();
 
         for(User user : User.listOfUsers){
@@ -123,7 +132,8 @@ public class UserCommands {
         Indentions.indention();
     }
 
-    public static boolean deleteSelectedUser(){
+    @SuppressWarnings("UnusedReturnValue")
+    static boolean deleteSelectedUser(){
         Indentions.indention();
 
         System.out.print("\nEnter name: ");

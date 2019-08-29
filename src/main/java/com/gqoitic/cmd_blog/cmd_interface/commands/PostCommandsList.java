@@ -30,6 +30,7 @@ public enum PostCommandsList {
         return shortCommand;
     }
 
+    @SuppressWarnings("UnusedReturnValue")
     public static boolean showAllPosts(){
         Indentions.indention();
 
@@ -56,6 +57,7 @@ public enum PostCommandsList {
         PostCommands.myPosts();
     }
 
+    @SuppressWarnings("UnusedReturnValue")
     public static boolean changeTitle(){
         if(Objects.isNull(Authorization.currentUser)){
             System.out.print("\n\n\t=You are not logged in=\n");
@@ -66,6 +68,7 @@ public enum PostCommandsList {
         }
     }
 
+    @SuppressWarnings("UnusedReturnValue")
     public static boolean changeText(){
         if(Objects.isNull(Authorization.currentUser)){
             System.out.print("\n\n\t=You are not logged in=\n");
