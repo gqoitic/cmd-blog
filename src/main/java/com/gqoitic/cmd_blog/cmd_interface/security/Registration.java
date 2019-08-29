@@ -9,8 +9,9 @@ import java.util.Scanner;
 
 public class Registration {
 
-    static Scanner scanner = new Scanner(System.in);
+    private static Scanner scanner = new Scanner(System.in);
 
+    @SuppressWarnings("UnusedReturnValue")
     public static boolean registration(){
 
         Indentions.indention();
@@ -44,7 +45,7 @@ public class Registration {
             }
         }
 
-        User user = new User(login, password, name, Role.USER);
+        new User(login, password, name, Role.USER);
 
         Indentions.indention();
         return true;

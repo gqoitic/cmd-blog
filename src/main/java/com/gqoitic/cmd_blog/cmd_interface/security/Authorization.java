@@ -10,8 +10,9 @@ public class Authorization {
 
     public static User currentUser;
 
-    static Scanner scanner = new Scanner(System.in);
+    private static Scanner scanner = new Scanner(System.in);
 
+    @SuppressWarnings("UnusedReturnValue")
     public static boolean login(){
 
         Indentions.indention();
@@ -42,6 +43,7 @@ public class Authorization {
         return false;
     }
 
+    @SuppressWarnings("UnusedReturnValue")
     public static boolean signOut(){
 
         Indentions.indention();
