@@ -7,11 +7,11 @@ import com.gqoitic.cmd_blog.model.Post;
 
 import java.util.Scanner;
 
-public class PostCommands {
+class PostCommands {
 
-    static Scanner scanner = new Scanner(System.in);
+    private static Scanner scanner = new Scanner(System.in);
 
-    public static void showPostsByTitle(){
+    static void showPostsByTitle(){
         Indentions.indention();
 
         System.out.print("Enter title: ");
@@ -26,7 +26,7 @@ public class PostCommands {
         Indentions.indention();
     }
 
-    public static void showPostsByAuthor(){
+    static void showPostsByAuthor(){
         Indentions.indention();
 
         System.out.print("Enter author: ");
@@ -41,7 +41,7 @@ public class PostCommands {
         Indentions.indention();
     }
 
-    public static void myPosts(){
+    static void myPosts(){
         Indentions.indention();
 
         for(Post post : Post.listOfPosts){
@@ -51,7 +51,8 @@ public class PostCommands {
         }
     }
 
-    public static boolean changeTitle(){
+    @SuppressWarnings("UnusedReturnValue")
+    static boolean changeTitle(){
         Indentions.indention();
 
         System.out.print("Enter old title: ");
@@ -83,7 +84,8 @@ public class PostCommands {
         return false;
     }
 
-    public static boolean changeText(){
+    @SuppressWarnings("UnusedReturnValue")
+    static boolean changeText(){
         Indentions.indention();
 
         System.out.print("Enter title: ");
