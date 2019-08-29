@@ -56,7 +56,8 @@ public class Interf_controller {
             {
                 help();
 
-            } else if(formattedUserInput.length() < 1) {}
+            } else //noinspection StatementWithEmptyBody
+                if(formattedUserInput.length() < 1) {}
 
               else if(formattedUserInput.equals(CHANGENAME.getCommand())               ||
                       formattedUserInput.equals(CHANGENAME.getShortCommand()))

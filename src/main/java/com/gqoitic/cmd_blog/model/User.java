@@ -27,7 +27,7 @@ public class User {
     }
 
     static {
-        User admin = new User("admin", "psw", "ADMIN", Role.ADMIN);
+        new User("admin", "psw", "ADMIN", Role.ADMIN);
     }
 
     public String getLogin() {
