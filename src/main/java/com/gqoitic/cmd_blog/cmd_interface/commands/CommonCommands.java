@@ -31,26 +31,36 @@ public enum CommonCommands {
 
     public static void help(){
         if(!Objects.isNull(Authorization.currentUser))
-            if(Authorization.currentUser.getRole().equals(Role.ADMIN))
-                System.out.print("\n\n\t[exit | q] [login | lg] [signout | so] [changeName | cname] [clear | cl]\n" +
-                                 "\t[changePassword | cpsw] [newPost | np] [showAllPosts | sap] [deletePost | dp]\n" +
-                                 "\t[deleteUser | du] [changeRole | crole] [showAllUsers  | au] [showPostsByTitle | pbt]\n" +
-                                 "\t[showPostsByAuthor | pba] [myPosts | mp] [changeTitle | ctitle] [changeText | ctext]\n" +
-                                 "\t[deleteSelectedUser | dsu] [help | h]\n\n");
+            if(Authorization.currentUser.getRole().equals(Role.ADMIN)) adminHelp();
+            else if(Authorization.currentUser.getRole().equals(Role.MODER)) moderHelp();
+            else userHelp();
 
-            else if(Authorization.currentUser.getRole().equals(Role.MODER))
-                System.out.print("\n\n\t[exit | q] [login | lg] [signout | so] [changeName | cname] [clear | cl]\n" +
-                                 "\t[changePassword | cpsw] [newPost | np] [showAllPosts | sap] [deletePost | dp]\n" +
-                                 "\t[deleteUser | du] [showAllUsers | au] [showPostsByTitle | pbt] [showPostsByAuthor | pba]\n" +
-                                 "\t[myPosts | mp] [changeTitle | ctitle] [changeText | ctext] [help | h]\n\n");
+        else notLoggedInHelp();
+    }
 
-            else
-                System.out.print("\n\n\t[exit | q] [login | lg] [signout | so] [changeName | cname] [clear | cl]\n" +
-                                 "\t[changePassword | cpsw] [newPost | np] [showAllPosts | sap] [deletePost | dp]\n" +
-                                 "\t[deleteUser | du] [showPostsByTitle | pbt] [showPostsByAuthor | pba] [myPosts | mp]\n" +
-                                 "\t[changeTitle | ctitle] [changeText | ctext] [help | h]\n\n");
+    private static void adminHelp(){
+        System.out.print("\n\n\t[exit | q] [login | lg] [signout | so] [changeName | cname] [clear | cl]\n" +
+                "\t[changePassword | cpsw] [newPost | np] [showAllPosts | sap] [deletePost | dp]\n" +
+                "\t[deleteUser | du] [changeRole | crole] [showAllUsers  | au] [showPostsByTitle | pbt]\n" +
+                "\t[showPostsByAuthor | pba] [myPosts | mp] [changeTitle | ctitle] [changeText | ctext]\n" +
+                "\t[deleteSelectedUser | dsu] [help | h]\n\n");
+    }
 
-        else
-            System.out.print("\n\n\t[exit | q] [login | lg] [registration | rg] [clear | cl] [showAllPosts | sap] [help | h]\n\n");
+    private static void moderHelp(){
+        System.out.print("\n\n\t[exit | q] [login | lg] [signout | so] [changeName | cname] [clear | cl]\n" +
+                "\t[changePassword | cpsw] [newPost | np] [showAllPosts | sap] [deletePost | dp]\n" +
+                "\t[deleteUser | du] [showAllUsers | au] [showPostsByTitle | pbt] [showPostsByAuthor | pba]\n" +
+                "\t[myPosts | mp] [changeTitle | ctitle] [changeText | ctext] [help | h]\n\n");
+    }
+
+    private static void userHelp(){
+        System.out.print("\n\n\t[exit | q] [login | lg] [signout | so] [changeName | cname] [clear | cl]\n" +
+                "\t[changePassword | cpsw] [newPost | np] [showAllPosts | sap] [deletePost | dp]\n" +
+                "\t[deleteUser | du] [showPostsByTitle | pbt] [showPostsByAuthor | pba] [myPosts | mp]\n" +
+                "\t[changeTitle | ctitle] [changeText | ctext] [help | h]\n\n");
+    }
+
+    private static void notLoggedInHelp(){
+        System.out.print("\n\n\t[exit | q] [login | lg] [registration | rg] [clear | cl] [showAllPosts | sap] [help | h]\n\n");
     }
 }
