@@ -95,14 +95,19 @@ class PostCommands {
         String newText = scanner.nextLine();
 
         for(Post post : Post.listOfPosts){
-            if(post.getTitle().equals(title) &&
-               Authorization.currentUser.getRole().equals(Role.ADMIN)         ||
-               Authorization.currentUser.getName().equals(post.getUserName()) ||
-               Authorization.currentUser.getRole().equals(Role.MODER))
-            {
-                post.setText(newText);
-                System.out.print("\n\n\t=Successfully=\n");
-                return true;
+            if(post.getTitle().equals(title)){
+                if(Authorization.currentUser.getRole().equals(Role.ADMIN) ||
+                   Authorization.currentUser.getRole().equals(Role.MODER)){
+                    post.setText(newText);
+                    System.out.print("\n\n\t=Successfully=\n");
+                    return true;
+                }
+
+                if(post.getUserName().equals(Authorization.currentUser.getName())){
+                    post.setText(newText);
+                    System.out.print("\n\n\t=Successfully=\n");
+                    return true;
+                }
             }
         }
 
