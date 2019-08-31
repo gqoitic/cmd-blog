@@ -38,11 +38,12 @@ public class Registration {
                 return false;
             }
 
-        for(User user : User.listOfUsers){
-            if(user.getLogin().equals(login) || user.getName().equals(name)){
-                System.out.print("\n\n\tUser with the same login or name already exist!\n");
-                return false;
-            }
+        if(User.listOfUsers.stream()
+                .anyMatch(user -> user.getLogin().equals(login) ||
+                          user.getName().equals(name)))
+        {
+            System.out.print("\n\n\tUser with the same login or name already exists!\n");
+            return false;
         }
 
         new User(login, password, name, Role.USER);

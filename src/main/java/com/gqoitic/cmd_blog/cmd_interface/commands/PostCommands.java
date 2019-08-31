@@ -17,11 +17,9 @@ class PostCommands {
         System.out.print("Enter title: ");
         String title = scanner.nextLine();
 
-        for(Post post : Post.listOfPosts){
-            if(post.getTitle().toUpperCase().equals(title.toUpperCase())){
-                System.out.println(post);
-            }
-        }
+        Post.listOfPosts.stream()
+                .filter(post -> post.getTitle().toUpperCase().equals(title.toUpperCase()))
+                .forEach(System.out::println);
 
         Indentions.indention();
     }
@@ -32,11 +30,9 @@ class PostCommands {
         System.out.print("Enter author: ");
         String author = scanner.nextLine();
 
-        for(Post post : Post.listOfPosts){
-            if(post.getUserName().toUpperCase().equals(author.toUpperCase())){
-                System.out.println(post);
-            }
-        }
+        Post.listOfPosts.stream()
+                .filter(post -> post.getUserName().equals(author))
+                .forEach(System.out::println);
 
         Indentions.indention();
     }
@@ -44,11 +40,9 @@ class PostCommands {
     static void myPosts(){
         Indentions.indention();
 
-        for(Post post : Post.listOfPosts){
-            if(post.getUserName().equals(Authorization.currentUser.getName())){
-                System.out.println(post);
-            }
-        }
+        Post.listOfPosts.stream()
+                .filter(post -> post.getUserName().equals(Authorization.currentUser.getName()))
+                .forEach(System.out::println);
     }
 
     @SuppressWarnings("UnusedReturnValue")
@@ -61,11 +55,9 @@ class PostCommands {
         System.out.print("Enter new title: ");
         String newTitle = scanner.nextLine();
 
-        for(Post post : Post.listOfPosts){
-            if(post.getTitle().equals(newTitle)){
-                System.out.print("\n\n\t=The same title already exists=\n");
-                return false;
-            }
+        if(Post.listOfPosts.stream().anyMatch(post -> post.getTitle().equals(newTitle))){
+            System.out.print("\n\n\t=The same title already exists=\n");
+            return false;
         }
 
         for(Post post : Post.listOfPosts){

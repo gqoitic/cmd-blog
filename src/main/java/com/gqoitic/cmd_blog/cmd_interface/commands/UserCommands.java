@@ -19,11 +19,9 @@ class UserCommands {
         System.out.print("\nEnter new name: ");
         String newName = scanner.nextLine();
 
-        for(User user : User.listOfUsers){
-            if(user.getName().equals(newName)){
-                System.out.print("\n\n\t=User with the same name already exists=\n");
-                return false;
-            }
+        if(User.listOfUsers.stream().anyMatch(user -> user.getName().equals(newName))){
+            System.out.print("\n\n\t=User with the same name already exists=\n");
+            return false;
         }
 
         Authorization.currentUser.setName(newName);
@@ -49,12 +47,9 @@ class UserCommands {
         System.out.print("\nEnter title: ");
         String title = scanner.nextLine();
 
-        for(Post post : Post.listOfPosts){
-            if(post.getTitle().equals(title)){
-                System.out.print("\n\n\t=The post with the same title already exists!=\n");
-
-                return false;
-            }
+        if(Post.listOfPosts.stream().anyMatch(post -> post.getTitle().equals(title))){
+            System.out.print("\n\n\t=The post with the same title already exists!=\n");
+            return false;
         }
 
         System.out.print("\nEnter text: ");
@@ -125,9 +120,7 @@ class UserCommands {
     static void showAllUsers(){
         Indentions.indention();
 
-        for(User user : User.listOfUsers){
-            System.out.println(user);
-        }
+        User.listOfUsers.forEach(System.out::println);
 
         Indentions.indention();
     }
