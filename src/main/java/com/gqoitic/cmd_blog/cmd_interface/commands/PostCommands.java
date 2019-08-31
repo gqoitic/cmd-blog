@@ -31,7 +31,8 @@ class PostCommands {
         String author = scanner.nextLine();
 
         Post.listOfPosts.stream()
-                .filter(post -> post.getUserName().equals(author))
+                .filter(post -> post.getUserName().toUpperCase()
+                                    .equals(author.toUpperCase()))
                 .forEach(System.out::println);
 
         Indentions.indention();
